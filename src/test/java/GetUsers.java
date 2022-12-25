@@ -1,20 +1,15 @@
 import io.restassured.RestAssured;
+import io.restassured.response.Response;
 
 public class GetUsers {
 
-    public static void getUsers() {
-        RestAssured.baseURI = "https://reqres.in/";
-
-        RestAssured.given()
-                .baseUri("https://reqres.in/")
-                .when()
-                .get("api/users?page=2")
-                .then()
-                .log()
-                .all();
+    public static Response getUsers() {
+        return RestAssured
+                .given(SpecBuiler.requestSpecBuilder())
+                .get();
     }
 
     public static void main(String[] args) {
-        getUsers();
+        System.out.println(getUsers().asString());
     }
 }
