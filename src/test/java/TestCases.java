@@ -1,3 +1,5 @@
+import io.restassured.RestAssured;
+
 import static io.restassured.RestAssured.*;
 
 import java.io.IOException;
@@ -13,7 +15,6 @@ public class TestCases {
     }
 
     public static String postUser() throws IOException {
-        useRelaxedHTTPSValidation();
         return given(new PostUserSpecBuilder().requestSpecBuilder())
                 .post()
                 .then()
@@ -22,6 +23,8 @@ public class TestCases {
     }
 
     public static void main(String[] args) throws IOException {
+        System.out.println(getUsers());
+        System.out.println("----------------------");
         System.out.println(postUser());
     }
 }
