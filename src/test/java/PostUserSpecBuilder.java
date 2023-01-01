@@ -1,17 +1,25 @@
+import helpers.FakeData;
 import helpers.PropertyLoader;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+//import net.minidev.json.JSONObject;
+import netscape.javascript.JSObject;
+import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class PostUserSpecBuilder implements SpecBuilder {
 
-    String requestBody = "{\n" +
-            "  \"email\": \"eve.holt@reqres.in\",\n" +
-            "  \"password\": \"pistol\"\n" +
-            "}";
+    public static void createPayload() {
+        JSONObject jsonObject = new JSONObject();
+
+    }
+    String userName = FakeData.getFakeFirstName();
+    String email = FakeData.getFakeEmail();
 
     @Override
     public RequestSpecification requestSpecBuilder() throws IOException {
@@ -19,7 +27,7 @@ public class PostUserSpecBuilder implements SpecBuilder {
                 .setContentType(ContentType.JSON)
                 .setBaseUri(PropertyLoader.getProperty("baseUrl"))
                 .setBasePath(PropertyLoader.getProperty("postUserBasePath"))
-                .setBody(requestBody)
+//                .setBody(new File("src/test/resources/Payloads/CreateUser.json"))
                 .build();
     }
 }

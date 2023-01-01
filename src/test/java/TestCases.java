@@ -2,9 +2,10 @@ import io.restassured.RestAssured;
 
 import static io.restassured.RestAssured.*;
 
+import java.io.File;
 import java.io.IOException;
 
-public class TestCases {
+public class TestCases extends BaseTest {
 
     public static String getUsers() throws IOException {
         return given(new GetUsersSpecBuilder().requestSpecBuilder())
@@ -16,6 +17,7 @@ public class TestCases {
 
     public static String postUser() throws IOException {
         return given(new PostUserSpecBuilder().requestSpecBuilder())
+                .body(new File("src/test/resources/Payloads/CreateUser.json"))
                 .post()
                 .then()
                 .log()
@@ -23,8 +25,9 @@ public class TestCases {
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println(getUsers());
-        System.out.println("----------------------");
+
         System.out.println(postUser());
+//        System.out.println("----------------------");
+        System.out.println(getUsers());
     }
 }
