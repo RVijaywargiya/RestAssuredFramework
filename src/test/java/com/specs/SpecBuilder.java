@@ -1,3 +1,5 @@
+package com.specs;
+
 import io.restassured.specification.RequestSpecification;
 
 import java.io.IOException;

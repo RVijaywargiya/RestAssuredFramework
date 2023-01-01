@@ -1,4 +1,7 @@
-import io.restassured.RestAssured;
+package com.tests;
+
+import com.specs.GetUsersSpecBuilder;
+import com.specs.PostUserSpecBuilder;
 
 import static io.restassured.RestAssured.*;
 

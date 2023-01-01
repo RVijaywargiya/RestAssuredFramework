@@ -1,15 +1,13 @@
+package com.specs;
+
 import helpers.FakeData;
 import helpers.PropertyLoader;
-import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 //import net.minidev.json.JSONObject;
-import netscape.javascript.JSObject;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 public class PostUserSpecBuilder implements SpecBuilder {

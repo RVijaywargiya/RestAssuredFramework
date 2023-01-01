@@ -1,3 +1,5 @@
+package com.specs;
+
 import static helpers.PropertyLoader.*;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
