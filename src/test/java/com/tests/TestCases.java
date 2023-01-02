@@ -23,7 +23,7 @@ public class TestCases extends BaseTest {
     @Test
     public void postUser() throws IOException {
         given(new PostUserSpecBuilder().requestSpecBuilder())
-                .body(getPayload("src/test/resources/Payloads/CreateUser.json"))
+                .body(getPayload("src/test/resources/Payloads/CreatePost.json"))
                 .post()
                 .then()
                 .log()

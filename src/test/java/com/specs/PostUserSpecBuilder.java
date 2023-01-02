@@ -25,7 +25,6 @@ public class PostUserSpecBuilder implements SpecBuilder {
                 .setContentType(ContentType.JSON)
                 .setBaseUri(PropertyLoader.getProperty("baseUrl"))
                 .setBasePath(PropertyLoader.getProperty("postUserBasePath"))
-//                .setBody(new File("src/test/resources/Payloads/CreateUser.json"))
                 .build();
     }
 }
